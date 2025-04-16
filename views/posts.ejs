@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Main container that holds sidebar and content */
+    .main-container {
+      display: flex;
+      min-height: 100vh; /* Full height view */
+    }
+
+    /* Sidebar Styles */
+    .sidebar {
+      width: 20%; /* Sidebar takes 25% of the page width */
+      background-color: #f0f0f0; /* Light gray background for the sidebar */
+      padding: 0px;
+    }
+
+    /* Content Styles */
+    .content {
+      width: 80%; /* Content takes 75% of the page width */
+      padding: 20px;
+    }
+
+    /* Styles for the posts list */
+    #postsList {
+      list-style: none; /* Remove default bullets from list */
+    }
+
+    #postsList li {
+      margin-bottom: 20px; /* Space between posts */
+      padding: 25px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      display: flex; /* Use flexbox for layout */
+      justify-content: space-between; /* Space between elements */
+    }
+
+    .post-avatar {
+      font-size: 52px;
+      font-weight: bold;
+      border: 1px solid #ddd;
+      border-radius: 10%;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px; /* Fixed width for the avatar */
+      height: 50px; /* Fixed height for the avatar */
+      background-color: #ffffff; /* Light gray background for the avatar */
+      color: #7a7a7a;
+      margin-right: 15px; /* Space between avatar and content */
+    }
+
+    .post-content {
+      flex: 1; /* Allow content to grow */
+    }
+
+    .post-title {
+      font-size: 18px; /* Adjust title font size */
+      margin-bottom: 5px;
+    }
+
+    .post-meta {
+      font-size: 14px; /* Adjust meta font size */
+      color: #777; /* Gray text for date and status */
+    }
+
+   
+
+    .post-action {
+      margin-left: 10px;
+      cursor: pointer;
+      color: #007bff; /* Blue color for actions */
+    }
+    .user-status
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    .post-user {
+        display: flex;
+        align-items: center;
+      }
+    .stats{
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 5px;
+
+    }
+    
+    .post-status {
+      color: #6C757D;
+      font-size: 14px;
+      margin-left: 10px;
+      
+    }
+
+    .post-status img {
+      margin-left: 5px; /* Space between count and icon */
+    }
+  </style>
+</head>
+<body>
+    <%- include("partial/navigationbar.ejs") %>
+    <div class="main-container">
+        <!-- Sidebar from header.ejs -->
+        <div class="sidebar">
+          <%- include("partial/sidebar.ejs") %>
+        </div>
+        <div class="content">
+            <ul id="postsList">
+                <% posts.forEach(post => { %>
+                <li>
+                    <div class="post-avatar">
+                        <%= post.title.charAt(0).toUpperCase() %>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-title">
+                            <%= post.title %>
+                        </div>
+                        <div class="post-meta">
+                            <span class="post-status">Draft</span>
+                            <span class="post-date"><%= post.date %></span>
+                        </div>
+                    </div>
+                    <div class="user-status">
+                    <div class="post-user">
+                        <span class="post-action">▶️</span>
+                        <span class="post-action" onclick="window.location.href='/api/posts/delete/<%= post.id %>' "><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                            <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5m-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5M4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06m6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528M8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5"/>
+                          </svg></span>
+                        <span class="post-action">👁️</span>
+                        <span class="post-action">👤</span>
+                        <span><%= post.author %></span>
+                        
+                    </div>
+                    <div class="stats" >
+                        <span class="post-status">
+                            <a href="/api/posts/delete/<%= post.id %>" style="text-decoration: none; color: inherit; cursor: pointer;">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-chat-left-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"></path>
+                            </svg>
+                            <%= post.commentcount %>
+                        </span>
+                        <span class="post-status">  
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
+                            <path d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z"></path>
+                          </svg>
+                          <%= post.viewcount %>
+                        </span>
+                    </div>
+                </div>
+                </li>
+                <% }); %>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

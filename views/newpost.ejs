@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/styles/style.css">
+
+    <title>Document</title>
+    <style>
+        .main-container {
+            display: flex; /* will make your content go besing sidebar */
+        }
+        .sidebar {
+            width: 20%; /* Sidebar takes 25% of the page width */
+            background-color: #f0f0f0; /* Light gray background for the sidebar */
+            padding: 0px;
+          }
+      
+          /* Content Styles */
+          .content {
+            width: 80%; /* Content takes 75% of the page width */
+            padding: 20px;
+          }
+          .titlebox
+          {
+            color: rgb(110, 107, 107);
+            width: 100%;
+            display: block;
+
+          }
+          input
+          {
+            outline: none;
+          }
+          .title{
+            border: none;
+            width: 50%;
+
+          }
+          .author
+          {
+            width: 20%;
+            border: none;
+          }
+          hr
+          {
+            height: 5px;
+            color: orange !important;
+            opacity: 0.95 !important;
+
+          }
+          form{
+            height:100%;
+            width: 100%;
+          }
+          .area
+          {
+            background-color: #eceff1;
+            
+            width: 100%;
+            height: 100%;
+          }
+          .textarea
+          {
+            outline: none;
+            border: none;
+            margin-top: 10px;
+            margin-left: 40px;
+            margin-right: 40px;
+            border: 10px 10px 10px 10px;
+            padding: 20px 20px 20px 20px;
+            
+            width: 100%;
+            height: 100%;
+          }
+    </style>
+</head>
+<body>
+   
+
+<%- include("partial/navigationbar.ejs") %>
+<div class="main-container">
+    <!-- Sidebar from header.ejs -->
+    <div class="sidebar">
+      <%- include("partial/sidebar.ejs") %>
+    </div>
+    <div class="content">
+        <%# for editing the post %>
+        <% if (locals.post) { %>
+            <form id="editform">
+                <input class="title" type="text" name="title" placeholder="Title" value="<%=post.title%>">
+                <textarea name="content" placeholder="Content">
+                    <%=post.content%>
+                </textarea>
+                <input class="author" type="text" name="author" value="<%=post.author%>">
+                <hr>
+            </form>
+        <%#for new post%>
+        <% } else {%>
+        <form id="newpost" method="post" action="/api/posts"><%#action send the details filled by user to the adress mentioned%>
+            <div class="titlebox">
+                Title:
+                <input class="title" type="text" name="title" placeholder="Title"> <%#for title name:is sent to server for identifying and placeholder tell the user what should be filled in%>
+                Author:
+                <input class="author" type="text" name="author" placeholder="author">
+                <button class="button-34" role="button" style="background-color: #F57C00; color:white" onclick="window.location.href='/posts' " >
+                    
+                      SUBMIT POST
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-arrow-return-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1.5 1.5A.5.5 0 0 0 1 2v4.8a2.5 2.5 0 0 0 2.5 2.5h9.793l-3.347 3.346a.5.5 0 0 0 .708.708l4.2-4.2a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 8.3H3.5A1.5 1.5 0 0 1 2 6.8V2a.5.5 0 0 0-.5-.5"/>
+                      </svg>
+                </button>
+                <hr>
+            </div>
+            <div class="area">
+            <textarea class="textarea" name="content" placeholder="content"></textarea>
+            </div>
+        </form>
+        <% } %>
+    </div>
+</div>
+</body>
+</html>

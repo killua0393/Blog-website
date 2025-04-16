@@ -1,0 +1,162 @@
+/*
+.sidebar
+{
+    display: none;
+    width: 280px;
+    background-color: #f8f9fa;
+    position: fixed; / Ensures it stays fixed on the side 
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 1000; / Ensures it is above other content 
+}
+.sidebar.show
+{
+    display: block;
+}
+.navbar-expand-lg
+{
+    justify-content: center;
+}
+    .openbtn
+{
+    justify-content: center;
+    align-items: center;
+}*/
+form.col-12.col-lg-auto.mb-2.mb-lg-0.me-lg-auto
+{   
+    padding-left: 20%;
+    padding-right: 0;
+    justify-content: center;
+    width: 70%;
+}
+input.form-control,button.btn.btn-light.text-dark.me-2,button.btn.btn-primary
+{
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    
+}
+button.btn.btn-primary
+{
+    background-color: #f57c00;
+    border: none;
+}
+button.btn.btn-light.text-dark.me-2,button.btn.btn-primary
+{
+    margin-top: 5%;
+}
+input.form-control
+{
+    height: 70px;
+    border-radius: 15px;
+    background: #f1f3f4;
+    margin-top: 1.25%;
+}
+.d-flex.flex-column.flex-shrink-0.p-3.bg-light
+{
+    height: 90vh;
+}
+.button-34 {
+    margin-top: 10px;
+    margin-left: 30px;
+    margin-bottom: 5%;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 999px;
+    box-shadow: #5E5DF0 0 10px 20px -10px;
+    box-sizing: border-box;
+    color: #f57c00;
+    cursor: pointer;
+    font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    opacity: 1;
+    outline: 0 solid transparent;
+    padding: 8px 18px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: fit-content;
+    word-break: break-word;
+    border: 0;
+  }
+
+.flex-row {
+    display:flex;
+    flex-direction: row;
+    align-items: center; /* Optional: aligns items vertically in the center */
+}
+ .btn-secondary{
+        --bs-btn-color: #000000;
+        --bs-btn-bg: #ffffff;
+        --bs-btn-border-color: #ffffff;
+        
+        
+    
+ } 
+.svg.bi.bi-list
+{
+   
+}
+ .threedots
+ {
+    padding: 10px;
+    
+ }
+ .nav-item
+{
+    font-size: 24px;
+    color: #546e7a;
+}
+path
+{
+    color:  #546e7a;;
+}
+li.nav-item{
+    
+    margin-bottom: 10px; /* Adjust this value to increase/decrease space */
+    
+}
+div.container.d-flex.flex-wrap.justify-content-center
+{
+    margin-left: 0px;
+    padding-left: 0px;
+    margin-right: 0px;
+    padding-right: 0px;
+    width: 100%;
+}
+div.text-end
+{
+    width: 15%;
+}
+    
+img.gb_Ec
+{
+    height: 50px;
+    width: 50px;
+}
+div.container.d-flex.flex-wrap.justify-content-center
+{
+    width: 100%;
+}
+.viewblog
+{
+    font-size: 20px;
+}
+.bi.bi.bi-box-arrow-up-right{
+    padding-right: 10px;
+}
+.viewblog{
+    padding-left: 50px;
+    color: #00838f;
+    font-size: 25px;
+
+}
+strong
+{
+    color: #00838f;
+    font-size: 20px;
+}

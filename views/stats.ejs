@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+  
+      /* Main container that holds sidebar and content */
+      .main-container {
+        display: flex;
+        min-height: 100vh; /* Full height view */
+      }
+  
+      /* Sidebar Styles */
+      .sidebar {
+        width: 25%; /* Sidebar takes 25% of the page width */
+        background-color: #f0f0f0; /* Light gray background for the sidebar */
+        padding: 20px;
+      }
+  
+      /* Content Styles */
+      .content {
+        width: 75%; /* Content takes 75% of the page width */
+        padding-left: 150px;
+        padding-right: 150px;
+        padding-top: 50px;
+      }
+      .c{
+        border: #3d3c3c;
+        border-style:solid;
+        border-width: 1px;
+        border-color: #afa7a7;
+        padding-top: 40px;
+        margin-bottom: 20px;
+        
+
+      }
+      .c1
+      {
+        padding: 20px 20px 20px 20px;
+        display: flex;
+        justify-content: center;
+
+      }
+      .f
+      {
+        font-weight: 700;
+        color: rgb(19, 110, 110);
+        padding-left: 50px;
+        padding-right: 50px;
+      }
+      .p
+      {
+        padding-right: 5px;
+      }
+      .vertical-line
+      {
+        width: 2px;
+        height: 30px;
+        background-color: rgb(172, 165, 165);
+      }
+  </style>
+</head>
+
+  <body>
+    <%- include("partial/navigationbar.ejs") %>
+    <div class="main-container">
+    <!-- Sidebar from header.ejs -->
+    <div class="sidebar">
+      <%- include("partial/sidebar.ejs") %>
+    </div>
+    <div class="content">
+        <div class="c c1">
+
+            <p class="f">
+                <svg class="p" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-journals" viewBox="0 0 16 16">
+                    <path d="M5 0h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2 2 2 0 0 1-2 2H3a2 2 0 0 1-2-2h1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1H1a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v9a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1H3a2 2 0 0 1 2-2"/>
+                    <path d="M1 6v-.5a.5.5 0 0 1 1 0V6h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V9h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 2.5v.5H.5a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1H2v-.5a.5.5 0 0 0-1 0"/>
+                  </svg>0 followers</p>
+            <div class="vertical-line"></div>
+            <p class="f">
+                <svg class="p" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+                    <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"/>
+                  </svg>0 posts</p>
+        </div>
+        <div class="c c2">
+            <p style="font-weight: 600;padding-left:20px; font-size:25px">Latest Post</p>
+            <div style="text-align:center ; padding-bottom:15px" class="img-container">
+                <img  src="https://www.blogger.com/img/no-data-sq-1x.png">
+
+            </div>
+            <p style="text-align: center;">No stats available for blog reviews</p>
+            <p style="color: #3d3c3c ;text-align: center">Check again later for new stats information</p>
+        </div>
+        <div class="c 3">
+            <p style="font-weight: 600;padding-left:20px;font-size:25px">the aim for today</p>
+
+            <div style="text-align:center ; padding-bottom:15px" class="img-container">
+                <img  src="https://www.blogger.com/img/no-data-sq-1x.png">
+
+            </div>
+            <p style="text-align: center;">There's no data to show</p>
+            <p style="color: #3d3c3c ;text-align: center">Try again later or sleecta different time period</p>
+        </div>
+        <div class="c 4">
+            <p style="font-weight: 600; padding-left:20px;font-size:25px">Posts</p>
+
+            <div style="text-align:center ; padding-bottom:15px" class="img-container">
+                <img  src="https://www.blogger.com/img/no-data-sq-1x.png">
+
+            </div>
+            <p style="text-align: center;">There's no data to show</p>
+            <p style="color: #3d3c3c ;text-align: center">Try again later or sleecta different time period</p>
+        </div>
+        <div class="c 5">
+            <p style="font-weight: 600; padding-left:20px;font-size:25px">Pages</p>
+
+            <div style="text-align:center ; padding-bottom:15px" class="img-container">
+                <img  src="https://www.blogger.com/img/no-data-sq-1x.png">
+
+            </div>
+            <p style="text-align: center;">There's no data to show</p>
+            <p style="color: #3d3c3c ;text-align: center">Try again later or sleecta different time period</p>
+        
+        </div>
+        <div style="color: rgb(20, 96, 96); font-weight:500;text-align:center">
+            Manage the tracking of your own pageviews
+        </div>
+    </div>
+</body>
+</html>
